@@ -69,5 +69,5 @@ class LastfmPlugin(EnslaverPluginBase):
 
         rData = EnslaverData("Today's Tracks", "Songs played according to Last.fm", recentOutput)
         lData = EnslaverData("Loved Today", "Songs loved on Last.fm today", lovedOutput)
-
-
+    
+         
