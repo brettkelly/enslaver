@@ -20,14 +20,14 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 
-##
-# Value object representing data to be written to Evernote
-##
-
 class EnslaverData(object):
-
+    "Value object representing data to be written"
     def __init__(self, title, description, content):
         self.title = title
         self.description = description
         self.enmlContent = content
 
+class EnslaverDataCollection(dict):
+    "A collection of EnslaverData objects"
+    def __init__(self, *args):
+        dict.__init__(self, *args)

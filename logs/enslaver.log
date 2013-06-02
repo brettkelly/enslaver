@@ -45,3 +45,268 @@
 2013-06-01 19:03:44,533 	 ERROR 	 Error loading plugin: LastfmPlugin.py
 2013-06-01 19:03:44,533 	 ERROR 	 <type 'exceptions.ImportError'>
 2013-06-01 19:03:44,533 	 ERROR 	 No module named LastfmPlugin
+2013-06-02 07:35:47,907 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:35:47,910 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:35:47,910 	 ERROR 	 'username'
+2013-06-02 07:36:22,093 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:36:22,093 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:36:22,093 	 ERROR 	 'username'
+2013-06-02 07:36:22,093 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:36:22,093 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:38:16,681 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:38:16,681 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:38:16,681 	 ERROR 	 'username'
+2013-06-02 07:38:16,681 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:38:16,681 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:39:02,344 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:39:02,344 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:39:02,346 	 DEBUG 	 {'logo': 'assets/lastfm.png'}
+2013-06-02 07:39:02,346 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:39:02,346 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:39:02,346 	 ERROR 	 'username'
+2013-06-02 07:39:02,346 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:39:02,346 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:53:02,903 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:53:02,903 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:53:02,904 	 DEBUG 	 {'logo': 'assets/lastfm.png'}
+2013-06-02 07:53:02,905 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:53:02,905 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:53:02,905 	 ERROR 	 'username'
+2013-06-02 07:53:02,905 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:53:02,905 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:54:19,069 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:54:19,069 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:54:19,070 	 DEBUG 	 {'logo': 'assets/lastfm.png'}
+2013-06-02 07:54:19,070 	 ERROR 	 Exception creating instance of LastfmPlugin
+2013-06-02 07:54:19,070 	 ERROR 	 <type 'exceptions.KeyError'>
+2013-06-02 07:54:19,070 	 ERROR 	 'username'
+2013-06-02 07:54:19,070 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:54:19,070 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:54:39,987 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:54:39,989 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:54:39,990 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:54:39,990 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:54:39,990 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:54:39,990 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:54:39,990 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:54:39,990 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:54:39,991 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:54:39,991 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:54:39,991 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:55:32,542 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:55:32,542 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:55:32,543 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:55:32,543 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:55:32,543 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:55:32,543 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:55:32,544 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:55:32,544 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:55:32,544 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:55:32,544 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:55:32,544 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:55:50,271 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:55:50,271 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:55:50,272 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:55:50,272 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:55:50,273 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:55:50,273 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:55:50,273 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:55:50,273 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:55:50,273 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:55:50,273 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:55:50,273 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:56:15,258 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:56:15,258 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:56:15,259 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:56:15,260 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:56:15,260 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:56:15,260 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:56:15,260 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:56:15,260 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:56:15,260 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:56:15,260 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:56:15,260 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:57:33,881 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:57:33,881 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:57:33,882 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:57:33,882 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:57:33,882 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:57:33,882 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:57:33,882 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:57:33,882 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:57:33,882 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:57:33,883 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:57:33,883 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:03,630 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:59:03,631 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:59:03,631 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:59:03,632 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:59:03,632 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:59:03,632 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:59:03,632 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:03,632 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:03,632 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:59:03,632 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:03,632 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:28,579 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:59:28,580 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:59:28,580 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:59:28,581 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:59:28,581 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:59:28,581 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:59:28,581 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:28,581 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:28,581 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:59:28,581 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:28,581 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:37,479 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 07:59:37,479 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 07:59:37,480 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 07:59:37,480 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 07:59:37,481 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 07:59:37,481 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 07:59:37,481 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:37,481 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 07:59:37,481 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 07:59:37,481 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 07:59:37,481 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:00:22,642 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:00:22,642 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:00:22,643 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:00:22,643 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:00:22,643 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:00:22,644 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:00:22,644 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:00:22,644 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:00:22,644 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:00:22,644 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:00:22,644 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:00:53,640 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:00:53,640 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:00:53,641 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:00:53,641 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:00:53,641 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:00:53,641 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:00:53,641 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:00:53,641 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:00:53,641 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:00:53,641 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:00:53,642 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:01:02,284 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:01:02,284 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:01:02,285 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:01:02,285 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:01:02,285 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:01:02,285 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:01:02,285 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:01:02,286 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:01:02,286 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:01:02,286 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:01:02,286 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:01:22,939 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:01:22,939 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:01:22,940 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:01:22,940 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:01:22,940 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:01:22,941 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:01:22,941 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:01:22,941 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:01:22,941 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:01:22,941 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:01:22,941 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:02:18,670 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:02:18,670 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:02:18,671 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:02:18,671 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:02:18,671 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:02:18,671 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:02:18,672 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:02:18,672 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:02:18,672 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:02:18,672 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:02:18,672 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:02:18,672 	 DEBUG 	 no recentData content
+2013-06-02 08:02:18,672 	 DEBUG 	 no lovedData content
+2013-06-02 08:02:42,389 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:02:42,389 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:02:42,389 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:02:42,390 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:02:42,390 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:02:42,390 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:02:42,390 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:02:42,390 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:02:42,390 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:02:42,390 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:02:42,390 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:02:42,390 	 DEBUG 	 no recentData content
+2013-06-02 08:02:42,391 	 DEBUG 	 no lovedData content
+2013-06-02 08:04:10,085 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:04:10,085 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:04:10,086 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:04:10,087 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:04:10,087 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:04:10,087 	 ERROR 	 Error reading Recent Tracks feed:
+2013-06-02 08:04:10,087 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:04:10,087 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:04:10,087 	 ERROR 	 Error reading Loved Tracks feed:
+2013-06-02 08:04:10,087 	 ERROR 	 <type 'exceptions.NameError'>
+2013-06-02 08:04:10,087 	 ERROR 	 global name 'feedparser' is not defined
+2013-06-02 08:04:10,087 	 DEBUG 	 no recentData content
+2013-06-02 08:04:10,088 	 DEBUG 	 no lovedData content
+2013-06-02 08:07:41,196 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:07:41,196 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:07:41,197 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:07:41,197 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:07:41,198 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:08:15,193 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:08:15,193 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:08:15,194 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:08:15,195 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:08:15,195 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:08:58,260 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:08:58,260 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:08:58,261 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:08:58,261 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:08:58,261 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:12:24,978 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:12:24,978 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:12:24,980 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:12:24,980 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:12:24,980 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:13:06,835 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:13:06,835 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:13:06,837 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:13:06,837 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:13:06,837 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:15:01,539 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:15:01,539 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:17:10,430 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:17:10,430 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:17:10,432 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:17:10,432 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:17:10,432 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:19:19,214 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:19:19,214 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:19:19,215 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:19:19,215 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:19:19,216 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:20:04,785 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:20:04,786 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:20:04,787 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:20:04,787 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:20:04,787 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:20:45,906 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:20:45,906 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:20:45,907 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:20:45,907 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:20:45,907 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:26:40,730 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:26:40,730 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:26:40,731 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:26:40,732 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:26:40,732 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 08:28:02,151 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 08:28:02,151 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 08:28:02,152 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 08:28:02,153 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 08:28:02,153 	 ERROR 	 No module named TwitterPlugin

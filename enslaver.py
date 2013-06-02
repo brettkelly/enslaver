@@ -20,43 +20,24 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
 # IN THE SOFTWARE.
 
-"""
-Main executable
-
-- Init logger
-- Init CLI args
-
-1. verify config is present
-    if not, prompt the user to rerun the config script
-2. verify Evernote auth token is present
-    if not, rerun the OAuth process
-3. verify no pending notes are waiting to be created
-    if so, stick them into Evernote
-4. load all plugins in /plugins directory
-5. match config section with plugin filename
-6. execute plugins, write results to temporary file
-7. connect to evernote and attempt to create notes
-8. if notes can't be created, save the output file for next time
-    save date/time of creation so it can be correctly set 
-"""
-
-##
-# Stop-gap
-##
-
-import logging
+import ConfigParser
 import imp
+import inspect
+import logging
 import os
 import os.path
 import sys
 from logging.handlers import RotatingFileHandler
 from optparse import OptionParser
-import ConfigParser
-import inspect
+
+# Evernote
+import evernote.edam.userstore.constants as UserStoreConstants
+import evernote.edam.notestore.ttypes as NoteStoreTypes
+import evernote.edam.type.ttypes as Types
+from evernote.api.client import EvernoteClient
+
 
 from enslaver.EnslaverPlugin import EnslaverPluginBase
-#from plugins import *
-
 
 def getLogger(level=logging.ERROR):
     """Create, configure and return a Logger instance"""
@@ -86,8 +67,8 @@ def getOptParser(usage=None):
     parser = OptionParser(usage=usage)
     parser.add_option("-c", "--config", dest="config_path",
                       help="Use a different config file than the default",
-                      default="~/.enslaver")
-    parser.add_option("-l", "--loglevel", dest="loglevel", default='ERROR',
+                      default=".enslaver")
+    parser.add_option("-l", "--loglevel", dest="loglevel", default='DEBUG',
                       help="Log level = defaults to 'ERROR'")
     parser.add_option("-q", "--quiet", dest="quiet",
                       help="Suppress normal output", action="store_true")
@@ -99,6 +80,10 @@ def getOptParser(usage=None):
 def slugToPluginName(slug):
     "Convert config slug to plugin file name"
     return "%sPlugin.py" % slug.capitalize()
+
+def pluginNameToSlug(plugin):
+    "Convert plugin name to config slug"
+    return plugin.lower().replace('plugin','')
 
 
 ##
@@ -118,9 +103,10 @@ if not os.path.exists(options.config_path):
     raise SystemExit
 
 ##
-# Parse plugin config and load plugins
+# Load config
 ##
 
+nonPluginConfigs = ['evernote','general']
 cfdict = {}
 plugins = []
 
@@ -132,17 +118,53 @@ except ConfigParser.Error, e:
     logger.critical(e)
     logger.info("#### Quitting ####")
 
+##
+# Init Evernote
+##
+
+if not config.has_section('evernote'):
+    logger.critical("Evernote config is missing")
+    logger.info("#### Quitting ####")
+    raise SystemExit
+
+tokenFile = config.get('evernote', 'token')
+if not os.path.exists(tokenFile):
+    logger.critical("Evernote auth token file is missing")
+    logger.info("#### Quitting ####")
+    raise SystemExit
+
+try:
+    auth_token = open(tokenFile).read()
+except IOError, e:
+    logger.critical("Unable to read Evernote auth token file")
+    logger.info("#### Quitting ####")
+    raise SystemExit
+
+if config.has_option('everote', 'sandbox'):
+    useSandbox = bool(config.get('evernote', 'sandbox'))
+else:
+    useSandbox = True # sandbox is the default
+
+evernote = EvernoteClient(token=auth_token, sandbox=useSandbox)
+
+
+##
+# Parse plugin config and load plugins
+##
+
 for configSection in config.sections():
+    if configSection in nonPluginConfigs:
+        continue
+    cfdict[configSection] = {}
     for item in config.items(configSection):
-        cfdict[configSection] = {}
-        cfdict[configSection][item[0]] = item[1]
+        cfdict[configSection][item[0]] = config.get(configSection, item[0])
 
     pluginFile = slugToPluginName(configSection)
     pluginName = pluginFile[:-3]
-    modInfo = imp.find_module(pluginName, ['plugins'])
     try:
+        modInfo = imp.find_module(pluginName, ['plugins'])
         module = imp.load_module(pluginName, *modInfo)
-    except ImportError:
+    except ImportError, e:
         logger.error("ImportError while loading %s:" % pluginName)
         logger.error(e)
         continue
@@ -159,7 +181,29 @@ for configSection in config.sections():
 
 feedData = {}
 
+##
+# Run plugins and capture output
+##
 for p in plugins:
-    feedData[p._pluginName] = p.run()
-print feedData
+    pOutput = p.run()
+    if type(pOutput) is not 'list':
+        pOutput = [pOutput]
+    feedData[p._pluginName]['data'] = pOutput
+    # I Am Not A Computer Scientist
+    feedData[p._pluginName]['config'] = cfdict[pluginNameToSlug(p._pluginName)]
 
+
+if not feedData:
+    logger.info('No data was returned by plugins.')
+    logger.info('This could mean something bad happened, I dunno.')
+    raise SystemExit
+
+
+
+# Make sure the output is well-ish formed
+#if options.testMode:
+    #with open('output.html', 'w') as out:
+        #for i in feedData.keys():
+            #for j in feedData[i]:
+                #for k in j:
+                    #out.write(k.enmlContent)

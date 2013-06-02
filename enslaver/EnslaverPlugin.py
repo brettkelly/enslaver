@@ -49,5 +49,3 @@ class EnslaverPluginBase(object):
             return None
         self.logger.debug("Finished loading feed")
         self.logger.debug(feed)
-
-

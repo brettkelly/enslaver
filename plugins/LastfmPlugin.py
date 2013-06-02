@@ -22,21 +22,27 @@
 # Grab Last.fm user information and save it
 ##
 
+import feedparser 
+
 from enslaver.EnslaverPlugin import EnslaverPluginBase
+from enslaver.EnslaverData import EnslaverData
 
 class LastfmPlugin(EnslaverPluginBase):
     "Last.fm plugin for Enslaver"
 
     def __init__(self, config, logger):
-        self.user = config['username']
-        self.recentFeed = \ 
-            "http://ws.audioscrobbler.com/1.0/user/%s/recenttracks.rss?limit=100" % self.user
-        self.lovedFeed = \ 
-            "http://ws.audioscrobbler.com/1.0/user/%s/lovedtrackes.rss?limit=100" % self.user
         self.logger = logger
+        self.logger.debug(config)
+        self.user = config['username']
+        self.recentFeed = \
+            "http://ws.audioscrobbler.com/1.0/user/%s/recenttracks.rss?limit=100" % self.user
+        self.lovedFeed = \
+            "http://ws.audioscrobbler.com/1.0/user/%s/lovedtrackes.rss?limit=100" % self.user
         EnslaverPluginBase.__init__(self, logger)
     
     def run(self):
+        recentData = None
+        lovedData = None
         try:
             recentData = feedparser.parse(self.recentFeed)
         except Exception, e:
@@ -51,23 +57,30 @@ class LastfmPlugin(EnslaverPluginBase):
             self.logger.error(type(e))
             self.logger.error(e)
 
+        recentOutput = ''
         if recentData:
             recentOutput = '<ul style="margin-bottom:5px">'
             for item in recentData.entries:
                 url = item['links'][0]['href']
-                name = item['title']
-                recentOutput += '<li><a href="%s">%s</a>' % (url, name)
+                name = item['title'].replace(u'\u2013', '&mdash;')
+                recentOutput += '<li><a href="%s">%s</a></li>' % (url, name)
             recentOutput += '<ul>'
+        else:
+            self.logger.debug('no recentData content')
 
+        lovedOutput = ''
         if lovedData:
             lovedOutput = '<ul style="margin-bottom:5px">'
             for item in lovedData.entries:
                 url = item['links'][0]['href']
-                name = item['title']
-                lovedOutput += '<li><a href="%s">%s</a>' % (url, name)
+                name = item['title'].replace(u'\u2013', '&mdash;')
+                lovedOutput += '<li><a href="%s">%s</a></li>' % (url, name)
             lovedOutput += '<ul>'
+        else:
+            self.logger.debug('no lovedData content')
 
         rData = EnslaverData("Today's Tracks", "Songs played according to Last.fm", recentOutput)
         lData = EnslaverData("Loved Today", "Songs loved on Last.fm today", lovedOutput)
     
          
+        return [rData, lData]

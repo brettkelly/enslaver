@@ -1,3 +1,9 @@
+[evernote]
+notebook: Enslaver
+tags: [social, enslaver]
+token: .entoken
+sandbox: True
+
 [lastfm]
 username: inkedmn
 heading: Last.fm
