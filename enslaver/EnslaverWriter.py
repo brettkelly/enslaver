@@ -36,7 +36,7 @@ class EvernoteWriter(object):
     def _findOrCreateNotebook(self):
         useDefault = False
         try:
-            notebook = config['notebook']
+            notebook = self.config['notebook']
         except KeyError, e:
             self.logger.info("Notebook not defined in config; using default notebook")
             useDefault = True
@@ -81,7 +81,7 @@ class EvernoteWriter(object):
         "Get or create tags defined in config"
         noteTags = []
         try:
-            tags = config['tags']
+            tags = self.config['tags']
         except KeyError, e:
             self.logger.info("No tags defined in Evernote config") 
             return None
