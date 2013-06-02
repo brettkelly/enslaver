@@ -1,0 +1,47 @@
+2013-02-27 14:15:49,359 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:24:28,242 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:24:39,613 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:24:48,093 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:25:49,287 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:26:41,011 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:27:49,670 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:28:11,369 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:31:29,262 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-02-27 14:35:46,202 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:25:14,032 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:25:46,091 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:25:51,788 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:26:58,353 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:28:01,602 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 15:28:26,187 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 17:57:41,830 	 INFO 	 Options: {'loglevel': 'INFO', 'quiet': None, 'testMode': None, 'config_path': '~/.enslaver'}
+2013-06-01 18:27:21,337 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:27:21,339 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:27:21,340 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:27:37,284 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:27:37,284 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:27:37,284 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:29:07,258 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:29:07,258 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:29:07,258 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:29:24,159 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:29:24,159 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:29:24,160 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:29:31,017 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:29:31,017 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:29:31,017 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:29:58,971 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:29:58,971 	 ERROR 	 <type 'exceptions.SyntaxError'>
+2013-06-01 18:29:58,972 	 ERROR 	 invalid syntax (<string>, line 1)
+2013-06-01 18:33:10,644 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 18:33:10,644 	 ERROR 	 <type 'exceptions.AttributeError'>
+2013-06-01 18:33:10,644 	 ERROR 	 'module' object has no attribute 'abs'
+2013-06-01 19:03:25,155 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 19:03:25,155 	 ERROR 	 <type 'exceptions.ImportError'>
+2013-06-01 19:03:25,155 	 ERROR 	 No module named LastfmPlugin
+2013-06-01 19:03:33,746 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 19:03:33,746 	 ERROR 	 <type 'exceptions.ImportError'>
+2013-06-01 19:03:33,746 	 ERROR 	 No module named LastfmPlugin
+2013-06-01 19:03:44,533 	 ERROR 	 Error loading plugin: LastfmPlugin.py
+2013-06-01 19:03:44,533 	 ERROR 	 <type 'exceptions.ImportError'>
+2013-06-01 19:03:44,533 	 ERROR 	 No module named LastfmPlugin
