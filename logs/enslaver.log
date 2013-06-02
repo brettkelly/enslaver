@@ -310,3 +310,26 @@
 2013-06-02 08:28:02,152 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
 2013-06-02 08:28:02,153 	 ERROR 	 ImportError while loading TwitterPlugin:
 2013-06-02 08:28:02,153 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 13:03:58,381 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 13:03:58,383 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 13:03:58,385 	 CRITICAL 	 Error initializing EvernoteWriter:
+2013-06-02 13:03:58,385 	 CRITICAL 	 name 'EvernoteWriter' is not defined
+2013-06-02 13:04:59,733 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 13:04:59,733 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 13:04:59,734 	 CRITICAL 	 Error initializing EvernoteWriter:
+2013-06-02 13:04:59,734 	 CRITICAL 	 get() takes at least 3 arguments (2 given)
+2013-06-02 13:07:19,501 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 13:07:19,501 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 13:07:19,504 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 13:07:19,504 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 13:07:19,504 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 13:08:20,176 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 13:08:20,176 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 13:08:20,177 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 13:08:20,177 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 13:08:20,177 	 ERROR 	 No module named TwitterPlugin
+2013-06-02 13:08:29,796 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-02 13:08:29,796 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-02 13:08:29,797 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-02 13:08:29,797 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-02 13:08:29,797 	 ERROR 	 No module named TwitterPlugin

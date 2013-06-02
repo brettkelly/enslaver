@@ -38,6 +38,7 @@ from evernote.api.client import EvernoteClient
 
 
 from enslaver.EnslaverPlugin import EnslaverPluginBase
+from enslaver.EnslaverWriter import EvernoteWriter
 
 def getLogger(level=logging.ERROR):
     """Create, configure and return a Logger instance"""
@@ -121,6 +122,7 @@ except ConfigParser.Error, e:
 ##
 # Init Evernote
 ##
+enconfig = {}
 
 if not config.has_section('evernote'):
     logger.critical("Evernote config is missing")
@@ -140,13 +142,27 @@ except IOError, e:
     logger.info("#### Quitting ####")
     raise SystemExit
 
+enconfig['token'] = open(tokenFile).read().strip()
+
 if config.has_option('everote', 'sandbox'):
     useSandbox = bool(config.get('evernote', 'sandbox'))
 else:
     useSandbox = True # sandbox is the default
+enconfig['sandbox'] = useSandbox
 
-evernote = EvernoteClient(token=auth_token, sandbox=useSandbox)
+try:
+    evernote = EvernoteClient(token=auth_token, sandbox=useSandbox)
+except Exception, e:
+    logger.critical("Error initializing EvernoteClient:")
+    logger.critical(e)
+    raise SystemExit
 
+try:
+    enWriter = EvernoteWriter(enconfig, evernote, logger)
+except Exception, e:
+    logger.critical("Error initializing EvernoteWriter:")
+    logger.critical(e)
+    raise SystemExit
 
 ##
 # Parse plugin config and load plugins
@@ -185,6 +201,7 @@ feedData = {}
 # Run plugins and capture output
 ##
 for p in plugins:
+    feedData[p._pluginName] = {}
     pOutput = p.run()
     if type(pOutput) is not 'list':
         pOutput = [pOutput]
@@ -192,13 +209,18 @@ for p in plugins:
     # I Am Not A Computer Scientist
     feedData[p._pluginName]['config'] = cfdict[pluginNameToSlug(p._pluginName)]
 
-
 if not feedData:
     logger.info('No data was returned by plugins.')
     logger.info('This could mean something bad happened, I dunno.')
     raise SystemExit
 
-
+try:
+    enWriter.write(feedData)
+except Exception, e:
+    logger.critical("Error writing to Evernote:")
+    logger.critical(type(e))
+    logger.critical(e)
+    raise SystemExit
 
 # Make sure the output is well-ish formed
 #if options.testMode:
