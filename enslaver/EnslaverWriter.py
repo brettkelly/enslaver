@@ -24,6 +24,7 @@ import evernote.edam.userstore.constants as UserStoreConstants
 import evernote.edam.notestore.ttypes as NoteStoreTypes
 import evernote.edam.type.ttypes as Types
 import evernote.edam.error.ttypes as Errors
+from datetime import date
 
 class EvernoteWriter(object):
     "Writer for Evernote"
@@ -112,6 +113,24 @@ class EvernoteWriter(object):
 
     def write(self, dataObjs):
         "Write data to Evernote"
-    
-        
+        self.logger.debug("Preparing to write Evernote note")
+        tags = self._findOrCreateTags()
+        self.logger.info("Using tags: %s" % [t.name for t in tags].join(', '))
+        notebook = self._findOrCreateNotebook()
+        if not notebook:
+            # TODO: raise a meaningful exception here
+            raise Exception('no notebook and this is very informative') 
 
+        self.logger.info("Using notebook: %s" % notebook.name)
+        self.logger.debug("%d data objects to write" % len(dataObjs))
+
+        note = Types.Note()
+        note.title = "%s - Enslaver Log" % date.today().strftime("%Y-%m-%d")
+        note.notebookGuid = notebook.guid
+        note.tagGuids = [t.guid for t in tags]
+
+        contentSkel = """<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+        contentSkel += "<en-note>%s</en-note>"""
+
+        
