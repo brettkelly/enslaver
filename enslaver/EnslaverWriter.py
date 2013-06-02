@@ -27,8 +27,7 @@ import evernote.edam.error.ttypes as Errors
 
 class EvernoteWriter(object):
     "Writer for Evernote"
-    def __init__(self, data, config, client, logger):
-        self.data = data
+    def __init__(self, config, client, logger):
         self.config = config
         self.client = client
         self.logger = logger
@@ -95,16 +94,24 @@ class EvernoteWriter(object):
 
         for tag in tagList:
             if tag.name in tags:
-               noteTags.append(tag)
+                noteTags.append(tag)
+                taglist.remove(tag.name)
 
-        if len(tags) == len(noteTags):
-            # we found all of the defined tags; return them
-            return noteTags
-
+        for tag in tags:
+            try:
+                t = Types.Tag()
+                t.name = tag
+                newTag = note_store.createTag(t)
+                noteTags.append(newTag)
+            except EDAMUserException, ue:
+                self.logger.critical("EDAMUserException getting tag list")
+                self.logger.critical(ue)
+                self.logger.info("Skipping tag: %s" % tag)
         
+        return noteTags
 
-    def write(self):
+    def write(self, dataObjs):
         "Write data to Evernote"
-
+    
         
 
