@@ -30,28 +30,28 @@ class EvernoteWriter(object):
     "Writer for Evernote"
     def __init__(self, config, client, logger):
         self.config = config
-        self.client = client
+        self.note_store = client.get_note_store()
         self.logger = logger
 
     def _findOrCreateNotebook(self):
         useDefault = False
         try:
-            notebook = config['notebook']
+            notebook = self.config['notebook']
         except KeyError, e:
             self.logger.info("Notebook not defined in config; using default notebook")
             useDefault = True
         
         if useDefault:
             try:
-                nb = note_store.getDefaultNotebook()
-            except EDAMUserException, ue:
+                nb = self.note_store.getDefaultNotebook()
+            except Errors.EDAMUserException, ue:
                 self.logger.critical("EDAMUserException when getting default notebook")
                 self.logger.critical(ue)
                 return None
         else:
             try:
                 self.logger.info("Getting notebooks from Evernote")
-                notebooks = self.client.note_store.listNotebooks()
+                notebooks = self.note_store.listNotebooks()
                 self.logger.debug("Found %d notebooks" % len(notebooks))
             except Errors.EDAMUserException, ue:
                 self.logger.critical("EDAMUserException when listing notebooks")
@@ -65,8 +65,8 @@ class EvernoteWriter(object):
             nb.name = notebook
 
             try:
-                nb = note_store.createNotebook(nb)
-            except EDAMUserException, ue:
+                nb = self.note_store.createNotebook(nb)
+            except Errors.EDAMUserException, ue:
                 self.logger.critical("EDAMUserException creating notebook %s" % notebook)
                 self.logger.critical(ue)
                 return None
@@ -81,14 +81,14 @@ class EvernoteWriter(object):
         "Get or create tags defined in config"
         noteTags = []
         try:
-            tags = config['tags']
+            tags = self.config['tags']
         except KeyError, e:
             self.logger.info("No tags defined in Evernote config") 
-            return None
+            return noteTags 
 
         try:
-            tagList = note_store.listTags()
-        except EDAMUserException, ue:
+            tagList = self.note_store.listTags()
+        except Errors.EDAMUserException, ue:
             self.logger.critical("EDAMUserException getting tag list")
             self.logger.critical(ue)
             return None
@@ -102,9 +102,9 @@ class EvernoteWriter(object):
             try:
                 t = Types.Tag()
                 t.name = tag
-                newTag = note_store.createTag(t)
+                newTag = self.note_store.createTag(t)
                 noteTags.append(newTag)
-            except EDAMUserException, ue:
+            except Errors.EDAMUserException, ue:
                 self.logger.critical("EDAMUserException getting tag list")
                 self.logger.critical(ue)
                 self.logger.info("Skipping tag: %s" % tag)
@@ -115,7 +115,8 @@ class EvernoteWriter(object):
         "Write data to Evernote"
         self.logger.debug("Preparing to write Evernote note")
         tags = self._findOrCreateTags()
-        self.logger.info("Using tags: %s" % [t.name for t in tags].join(', '))
+        if tags:
+            self.logger.info("Using tags: %s" % [t.name for t in tags].join(', '))
         notebook = self._findOrCreateNotebook()
         if not notebook:
             # TODO: raise a meaningful exception here
@@ -127,10 +128,30 @@ class EvernoteWriter(object):
         note = Types.Note()
         note.title = "%s - Enslaver Log" % date.today().strftime("%Y-%m-%d")
         note.notebookGuid = notebook.guid
-        note.tagGuids = [t.guid for t in tags]
+        if tags:
+            note.tagGuids = [t.guid for t in tags]
 
         contentSkel = """<?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
         contentSkel += "<en-note>%s</en-note>"""
 
-        
+        content = ""
+
+        for i in range(len(dataObjs)):
+            obj = dataObjs[i]
+            if i != 0:
+                content += "<hr />"
+            content += '<h3>%s</h3>' % obj.title
+            content += '<h4>%s</h4>' % obj.description
+            content += obj.enmlContent
+
+        note.content = contentSkel % content
+    
+        try:
+            note = self.note_store.createNote(note)
+        except Errors.EDAMUserException, ue:
+            self.logger.critical("EDAMUserException when creating note:")
+            self.logger.critical(ue)
+            return None
+
+        return note.guid 

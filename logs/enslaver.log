@@ -333,3 +333,108 @@
 2013-06-02 13:08:29,797 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
 2013-06-02 13:08:29,797 	 ERROR 	 ImportError while loading TwitterPlugin:
 2013-06-02 13:08:29,797 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:19:59,825 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:19:59,827 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:19:59,828 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:19:59,831 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:19:59,832 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:19:59,832 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:20:02,412 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:20:02,412 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:20:02,412 	 CRITICAL 	 <type 'exceptions.NameError'>
+2013-06-03 15:20:02,412 	 CRITICAL 	 global name 'config' is not defined
+2013-06-03 15:20:35,960 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:20:35,960 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:20:35,960 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:20:35,961 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:20:35,961 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:20:35,961 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:20:37,774 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:20:37,774 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:20:37,774 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:20:37,775 	 CRITICAL 	 <type 'exceptions.TypeError'>
+2013-06-03 15:20:37,775 	 CRITICAL 	 'NoneType' object is not iterable
+2013-06-03 15:22:28,547 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:22:28,547 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:22:28,547 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:22:28,548 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:22:28,548 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:22:28,548 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:22:30,521 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:22:30,521 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:22:30,521 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:22:30,521 	 CRITICAL 	 <type 'exceptions.TypeError'>
+2013-06-03 15:22:30,522 	 CRITICAL 	 'NoneType' object is not iterable
+2013-06-03 15:23:42,078 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:23:42,078 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:23:42,078 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:23:42,079 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:23:42,079 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:23:42,080 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:23:44,179 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:23:44,180 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:23:44,180 	 CRITICAL 	 <type 'exceptions.UnboundLocalError'>
+2013-06-03 15:23:44,180 	 CRITICAL 	 local variable 'tags' referenced before assignment
+2013-06-03 15:24:39,488 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:24:39,488 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:24:39,488 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:24:39,489 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:24:39,489 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:24:39,489 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:24:40,691 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:24:40,691 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:24:40,691 	 INFO 	 Notebook not defined in config; using default notebook
+2013-06-03 15:24:40,691 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:24:40,691 	 CRITICAL 	 <type 'exceptions.NameError'>
+2013-06-03 15:24:40,691 	 CRITICAL 	 global name 'EDAMUserException' is not defined
+2013-06-03 15:24:54,432 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:24:54,433 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:24:54,433 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:24:54,434 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:24:54,434 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:24:54,434 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:24:55,719 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:24:55,719 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:24:55,719 	 INFO 	 Notebook not defined in config; using default notebook
+2013-06-03 15:24:55,719 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:24:55,719 	 CRITICAL 	 <type 'exceptions.NameError'>
+2013-06-03 15:24:55,719 	 CRITICAL 	 global name 'EDAMUserException' is not defined
+2013-06-03 15:25:21,409 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:25:21,409 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:25:21,409 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:25:21,410 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:25:21,410 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:25:21,410 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:25:22,900 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:25:22,900 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:25:22,900 	 INFO 	 Notebook not defined in config; using default notebook
+2013-06-03 15:25:22,900 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:25:22,900 	 CRITICAL 	 <type 'exceptions.NameError'>
+2013-06-03 15:25:22,900 	 CRITICAL 	 global name 'note_store' is not defined
+2013-06-03 15:26:27,559 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:26:27,559 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:26:27,559 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:26:27,560 	 DEBUG 	 {'username': 'inkedmn', 'logo': 'assets/lastfm.png', 'heading': 'Last.fm'}
+2013-06-03 15:26:27,560 	 ERROR 	 ImportError while loading TwitterPlugin:
+2013-06-03 15:26:27,560 	 ERROR 	 No module named TwitterPlugin
+2013-06-03 15:26:28,919 	 DEBUG 	 Preparing to write Evernote note
+2013-06-03 15:26:28,919 	 INFO 	 No tags defined in Evernote config
+2013-06-03 15:26:28,919 	 INFO 	 Notebook not defined in config; using default notebook
+2013-06-03 15:26:28,919 	 CRITICAL 	 Error writing to Evernote:
+2013-06-03 15:26:28,919 	 CRITICAL 	 <type 'exceptions.AttributeError'>
+2013-06-03 15:26:28,919 	 CRITICAL 	 'EvernoteClient' object has no attribute 'note_store'
+2013-06-03 15:27:36,035 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:27:36,035 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:27:36,035 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:27:38,533 	 CRITICAL 	 Error initializing EvernoteWriter:
+2013-06-03 15:27:38,533 	 CRITICAL 	 EDAMUserException(errorCode=2, parameter='authenticationToken')
+2013-06-03 15:29:54,780 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:29:54,780 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:29:54,780 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:29:55,045 	 CRITICAL 	 Error initializing EvernoteClient:
+2013-06-03 15:29:55,045 	 CRITICAL 	 EDAMUserException(errorCode=2, parameter='authenticationToken')
+2013-06-03 15:32:01,098 	 DEBUG 	 Logger initialized to level DEBUG
+2013-06-03 15:32:01,099 	 INFO 	 Enslaver is in the hizzy hizzy.
+2013-06-03 15:32:01,099 	 INFO 	 Options: {'loglevel': 'DEBUG', 'quiet': None, 'testMode': None, 'config_path': '.enslaver'}
+2013-06-03 15:32:01,099 	 CRITICAL 	 Error initializing EvernoteClient:
+2013-06-03 15:32:01,099 	 CRITICAL 	 name 'self' is not defined

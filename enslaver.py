@@ -64,13 +64,13 @@ def getLogger(level=logging.ERROR):
 
 def getOptParser(usage=None):
     """Create, configure and return an OptionParser instance"""
-
+    logDefault = 'DEBUG'
     parser = OptionParser(usage=usage)
     parser.add_option("-c", "--config", dest="config_path",
                       help="Use a different config file than the default",
                       default=".enslaver")
-    parser.add_option("-l", "--loglevel", dest="loglevel", default='DEBUG',
-                      help="Log level = defaults to 'ERROR'")
+    parser.add_option("-l", "--loglevel", dest="loglevel", default=logDefault,
+                      help="Log level = defaults to '%s'" % logDefault)
     parser.add_option("-q", "--quiet", dest="quiet",
                       help="Suppress normal output", action="store_true")
     parser.add_option("-t", "--test", dest="testMode",
@@ -94,6 +94,7 @@ parser = getOptParser()
 (options, args) = parser.parse_args()
 loglevel = getattr(logging, options.loglevel.upper())
 logger = getLogger(loglevel)
+logger.info('Enslaver is in the hizzy hizzy.')
 logger.info('Options: %s' % options)
 
 if options.config_path.startswith('~'):
@@ -151,7 +152,11 @@ else:
 enconfig['sandbox'] = useSandbox
 
 try:
+    self.logger.debug("About to init EvernoteClient")
     evernote = EvernoteClient(token=auth_token, sandbox=useSandbox)
+    self.logger.debug("Init'd EvernoteClient")
+    note_store = evernote.get_note_store()
+    self.logger.debug("NoteStore instance created")
 except Exception, e:
     logger.critical("Error initializing EvernoteClient:")
     logger.critical(e)
@@ -205,7 +210,7 @@ for p in plugins:
     pOutput = p.run()
     if type(pOutput) is not 'list':
         pOutput = [pOutput]
-    feedData[p._pluginName]['data'] = pOutput
+    feedData[p._pluginName]['data'] = pOutput # a list of EnslaverData objects
     # I Am Not A Computer Scientist
     feedData[p._pluginName]['config'] = cfdict[pluginNameToSlug(p._pluginName)]
 

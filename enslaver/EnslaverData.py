@@ -26,8 +26,3 @@ class EnslaverData(object):
         self.title = title
         self.description = description
         self.enmlContent = content
-
-class EnslaverDataCollection(dict):
-    "A collection of EnslaverData objects"
-    def __init__(self, *args):
-        dict.__init__(self, *args)
