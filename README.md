@@ -8,7 +8,7 @@ This is a work in progress.
 You'll need:
 
 * An account on the Evernote [Sandbox](https://sandbox.evernote.com) (dev server)
-* A developer token from Sandbox ([get that here](https://sandbox.evernote.com/api/DeveloperToken.action)
+* A developer token from Sandbox ([get that here](https://sandbox.evernote.com/api/DeveloperToken.action))
 * The `evernote` and `feedparser` libs installed (both are available via `pip`)
 
 #### Setup
