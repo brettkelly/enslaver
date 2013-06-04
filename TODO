@@ -3,6 +3,8 @@ Standardize plugin output handling
 Get Last.fm plugin working before moving on to other plugins, dumbhead
 Make the output non-ugly
 Fix the em dash in output
+Restrict data gathered to stuff that originated in the last 24 hours
+    Possibly just the current calendar day?
 
 ### Later
 
