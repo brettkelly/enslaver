@@ -80,46 +80,21 @@ class EvernoteWriter(object):
     def _findOrCreateTags(self):
         "Get or create tags defined in config"
         noteTags = []
-        self.logger.debug('Config: %s' % str(self.config))
-        self.logger.debug('Config type: %s' % type(self.config))
         try:
             self.logger.debug('Tags value from config: %s' % self.config['tags'])
             tags = self.config['tags']
         except KeyError, e:
             self.logger.info("No tags defined in Evernote config") 
             return noteTags 
+        return self.config['tags']
 
-        try:
-            tagList = self.note_store.listTags()
-        except Errors.EDAMUserException, ue:
-            self.logger.critical("EDAMUserException getting tag list")
-            self.logger.critical(ue)
-            return None
-
-        for tag in tagList:
-            if tag.name in tags:
-                noteTags.append(tag)
-                tagList.remove(tag.name)
-
-        for tag in tags:
-            try:
-                t = Types.Tag()
-                t.name = tag.strip()
-                newTag = self.note_store.createTag(t)
-                noteTags.append(newTag)
-            except Errors.EDAMUserException, ue:
-                self.logger.critical("Error creating tag: %s" % tag)
-                self.logger.critical(ue)
-                self.logger.info("Skipping tag: %s" % tag)
-        
-        return noteTags
 
     def write(self, dataObjs):
         "Write data to Evernote"
         self.logger.debug("Preparing to write Evernote note")
         tags = self._findOrCreateTags()
         if tags:
-            self.logger.info("Using tags: %s" % [t.name for t in tags].join(', '))
+            self.logger.info("Using tags: %s" % ','.join(tags))
         notebook = self._findOrCreateNotebook()
         if not notebook:
             # TODO: raise a meaningful exception here
@@ -132,7 +107,7 @@ class EvernoteWriter(object):
         note.title = "%s - Enslaver Log" % date.today().strftime("%Y-%m-%d")
         note.notebookGuid = notebook.guid
         if tags:
-            note.tagGuids = [t.guid for t in tags]
+            note.tagNames = tags
 
         contentSkel = """<?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
