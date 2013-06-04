@@ -64,7 +64,7 @@ class LastfmPlugin(EnslaverPluginBase):
             recentOutput = '<ul style="margin-bottom:5px">'
             for item in recentData.entries:
                 url = item['links'][0]['href'].replace('&', '&amp;')
-                name = item['title'].replace(u'\u2013', '&mdash;').replace('&', '&amp;')
+                name = item['title'].replace(u'\u2013', '--').replace('&', '&amp;')
                 recentOutput += '<li><a href="%s">%s</a></li>' % (url, name)
             recentOutput += '</ul>'
         else:
@@ -73,11 +73,11 @@ class LastfmPlugin(EnslaverPluginBase):
         # Serious DRY violation follows.
 
         lovedOutput = ''
-        if lovedData:
+        if lovedData and lovedData.entries:
             lovedOutput = '<ul style="margin-bottom:5px">'
             for item in lovedData.entries:
                 url = item['links'][0]['href'].replace('&', '&amp;')
-                name = item['title'].replace(u'\u2013', '&mdash;').replace('&', '&amp;')
+                name = item['title'].replace(u'\u2013', '--').replace('&', '&amp;')
                 lovedOutput += '<li><a href="%s">%s</a></li>' % (url, name)
             lovedOutput += '</ul>'
         else:
