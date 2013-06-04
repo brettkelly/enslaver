@@ -32,6 +32,8 @@ class EvernoteWriter(object):
         self.config = config
         self.note_store = client.get_note_store()
         self.logger = logger
+        self.logger.debug('Evernote config:')
+        self.logger.debug(str(self.config))
 
     def _findOrCreateNotebook(self):
         useDefault = False
@@ -57,9 +59,11 @@ class EvernoteWriter(object):
                 self.logger.critical("EDAMUserException when listing notebooks")
                 self.logger.critical(ue)
                 return None
+
+            self.logger.debug('Iterating over notebooks')
             for n in notebooks:
                 if n.name == notebook:
-                    return n.guid
+                    return n
             # Haven't found the notebook, create it
             nb = Types.Notebook()
             nb.name = notebook
@@ -79,13 +83,12 @@ class EvernoteWriter(object):
 
     def _findOrCreateTags(self):
         "Get or create tags defined in config"
-        noteTags = []
         try:
             self.logger.debug('Tags value from config: %s' % self.config['tags'])
             tags = self.config['tags']
         except KeyError, e:
             self.logger.info("No tags defined in Evernote config") 
-            return noteTags 
+            return []
         return self.config['tags']
 
 
@@ -105,26 +108,36 @@ class EvernoteWriter(object):
 
         note = Types.Note()
         note.title = "%s - Enslaver Log" % date.today().strftime("%Y-%m-%d")
+        self.logger.debug('Title: %s' % note.title)
         note.notebookGuid = notebook.guid
+        self.logger.debug('NB Guid: %s' % note.notebookGuid)
         if tags:
-            note.tagNames = tags
+            self.logger.debug('Setting note.tagNames to %s' % tags)
+            note.tagNames = map(str.strip, tags)
 
         contentSkel = """<?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
-        contentSkel += "<en-note>%s</en-note>"""
+        <en-note>%s</en-note>"""
 
         content = ""
 
+        self.logger.debug('Looping over dataObjs')
+        self.logger.debug(type(dataObjs))
         for i in range(len(dataObjs)):
-            obj = dataObjs[i]
+            obj = dataObjs.items()[i][1]
+            self.logger.debug(obj)
             if i != 0:
+                self.logger.debug('First data object')
                 content += "<hr />"
-            content += '<h3>%s</h3>' % obj.title
-            content += '<h4>%s</h4>' % obj.description
-            content += obj.enmlContent
+            self.logger.debug('Adding heading')
+            content += '<h2>%s</h2>' % obj['config']['heading']
+            for d in obj['data'][0]:
+                content += '<h3>%s</h3>' % d.title
+                content += '<h4>%s</h4>' % d.description
+                content += d.enmlContent
 
         note.content = contentSkel % content
-    
+
         try:
             note = self.note_store.createNote(note)
         except Errors.EDAMUserException, ue:

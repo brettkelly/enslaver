@@ -2,7 +2,6 @@ Write the Evernote stuff and test it thoroughly
 Standardize plugin output handling
 Get Last.fm plugin working before moving on to other plugins
 Make the output non-ugly
-Fix _findOrCreateTags routine to use Note.tagNames
 
 ### Later
 

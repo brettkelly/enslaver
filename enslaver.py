@@ -94,7 +94,9 @@ parser = getOptParser()
 (options, args) = parser.parse_args()
 loglevel = getattr(logging, options.loglevel.upper())
 logger = getLogger(loglevel)
-logger.info('Enslaver is in the hizzy hizzy.')
+logger.info('#############################')
+logger.info('##### ENSLAVER ACTIVATE #####')
+logger.info('#############################')
 logger.info('Options: %s' % options)
 
 if options.config_path.startswith('~'):
@@ -154,8 +156,10 @@ else:
 enconfig['sandbox'] = useSandbox
 
 if config.has_option('evernote', 'tags'):
-    # Yeah, I know eval is evil. Whatever; fix it if you hate it.
     enconfig['tags'] = config.get('evernote','tags').split(',')
+
+if config.has_option('evernote', 'notebook'):
+    enconfig['notebook'] = config.get('evernote', 'notebook')
 
 try:
     logger.debug("About to init EvernoteClient")
@@ -213,6 +217,7 @@ feedData = {}
 # Run plugins and capture output
 ##
 for p in plugins:
+    logger.info('Running plugin: %s' % p._pluginName)
     feedData[p._pluginName] = {}
     pOutput = p.run()
     if type(pOutput) is not 'list':

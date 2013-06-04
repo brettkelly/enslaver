@@ -41,9 +41,11 @@ class LastfmPlugin(EnslaverPluginBase):
         EnslaverPluginBase.__init__(self, logger)
     
     def run(self):
+        self.logger.debug('%s.run() called' % self.__class__.__name__)
         recentData = None
         lovedData = None
         try:
+            self.logger.debug('Retrieving recent tracks feed')
             recentData = feedparser.parse(self.recentFeed)
         except Exception, e:
             self.logger.error("Error reading Recent Tracks feed:")
@@ -61,21 +63,23 @@ class LastfmPlugin(EnslaverPluginBase):
         if recentData:
             recentOutput = '<ul style="margin-bottom:5px">'
             for item in recentData.entries:
-                url = item['links'][0]['href']
-                name = item['title'].replace(u'\u2013', '&mdash;')
+                url = item['links'][0]['href'].replace('&', '&amp;')
+                name = item['title'].replace(u'\u2013', '&mdash;').replace('&', '&amp;')
                 recentOutput += '<li><a href="%s">%s</a></li>' % (url, name)
-            recentOutput += '<ul>'
+            recentOutput += '</ul>'
         else:
             self.logger.debug('no recentData content')
+
+        # Serious DRY violation follows.
 
         lovedOutput = ''
         if lovedData:
             lovedOutput = '<ul style="margin-bottom:5px">'
             for item in lovedData.entries:
-                url = item['links'][0]['href']
-                name = item['title'].replace(u'\u2013', '&mdash;')
+                url = item['links'][0]['href'].replace('&', '&amp;')
+                name = item['title'].replace(u'\u2013', '&mdash;').replace('&', '&amp;')
                 lovedOutput += '<li><a href="%s">%s</a></li>' % (url, name)
-            lovedOutput += '<ul>'
+            lovedOutput += '</ul>'
         else:
             self.logger.debug('no lovedData content')
 
