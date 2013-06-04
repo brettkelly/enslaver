@@ -1,6 +1,6 @@
 [evernote]
 notebook: Enslaver
-tags: [social, enslaver]
+tags: social, enslaver
 token: .entoken
 sandbox: True
 

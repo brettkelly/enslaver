@@ -137,13 +137,15 @@ if not os.path.exists(tokenFile):
     raise SystemExit
 
 try:
-    auth_token = open(tokenFile).read()
+    auth_token = open(tokenFile).read().strip()
+    logger.debug('Auth token:')
+    logger.debug(auth_token)
 except IOError, e:
     logger.critical("Unable to read Evernote auth token file")
     logger.info("#### Quitting ####")
     raise SystemExit
 
-enconfig['token'] = open(tokenFile).read().strip()
+enconfig['token'] = auth_token
 
 if config.has_option('everote', 'sandbox'):
     useSandbox = bool(config.get('evernote', 'sandbox'))
@@ -151,19 +153,24 @@ else:
     useSandbox = True # sandbox is the default
 enconfig['sandbox'] = useSandbox
 
+if config.has_option('evernote', 'tags'):
+    # Yeah, I know eval is evil. Whatever; fix it if you hate it.
+    enconfig['tags'] = config.get('evernote','tags').split(',')
+
 try:
-    self.logger.debug("About to init EvernoteClient")
-    evernote = EvernoteClient(token=auth_token, sandbox=useSandbox)
-    self.logger.debug("Init'd EvernoteClient")
-    note_store = evernote.get_note_store()
-    self.logger.debug("NoteStore instance created")
+    logger.debug("About to init EvernoteClient")
+    logger.debug('Sandbox: '+ str(useSandbox))
+    enclient = EvernoteClient(token=auth_token, sandbox=useSandbox)
+    logger.debug("Init'd EvernoteClient")
+    note_store = enclient.get_note_store()
+    logger.debug("NoteStore instance created")
 except Exception, e:
     logger.critical("Error initializing EvernoteClient:")
     logger.critical(e)
     raise SystemExit
 
 try:
-    enWriter = EvernoteWriter(enconfig, evernote, logger)
+    enWriter = EvernoteWriter(enconfig, enclient, logger)
 except Exception, e:
     logger.critical("Error initializing EvernoteWriter:")
     logger.critical(e)

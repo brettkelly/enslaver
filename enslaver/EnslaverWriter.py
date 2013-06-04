@@ -80,7 +80,10 @@ class EvernoteWriter(object):
     def _findOrCreateTags(self):
         "Get or create tags defined in config"
         noteTags = []
+        self.logger.debug('Config: %s' % str(self.config))
+        self.logger.debug('Config type: %s' % type(self.config))
         try:
+            self.logger.debug('Tags value from config: %s' % self.config['tags'])
             tags = self.config['tags']
         except KeyError, e:
             self.logger.info("No tags defined in Evernote config") 
@@ -96,16 +99,16 @@ class EvernoteWriter(object):
         for tag in tagList:
             if tag.name in tags:
                 noteTags.append(tag)
-                taglist.remove(tag.name)
+                tagList.remove(tag.name)
 
         for tag in tags:
             try:
                 t = Types.Tag()
-                t.name = tag
+                t.name = tag.strip()
                 newTag = self.note_store.createTag(t)
                 noteTags.append(newTag)
             except Errors.EDAMUserException, ue:
-                self.logger.critical("EDAMUserException getting tag list")
+                self.logger.critical("Error creating tag: %s" % tag)
                 self.logger.critical(ue)
                 self.logger.info("Skipping tag: %s" % tag)
         
