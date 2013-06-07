@@ -1,7 +1,7 @@
 ENslaver
 ========
 
-A Python clone of Brett Terpstra's [Slogger](https://github.com/ttscoff/Slogger) project that logs to Evernote
+A Python clone of Brett Terpstra's [Slogger](https://github.com/ttscoff/Slogger) project that logs to Evernote (instead of Day One).
 
 This is a work in progress.
 
